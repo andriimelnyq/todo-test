@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+$goldColor: #FFD700;
+
+* {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Montserrat;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+@mixin transition($properties...) {
+  transition: all 0.3s linear;
+}
+
+@mixin hover ($properties...) {
+  transition: all 0.3s;
+  &:hover {
+    @each $property, $value in $properties {
+      #{$property}: #{$value};
+    }
+  }
+}
+
